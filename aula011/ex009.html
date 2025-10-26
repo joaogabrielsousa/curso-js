@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País</title>
+    <style>
+        body{
+            background: black;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            color: green;
+        }
+        input#ipais{
+            background: black;
+            border: 1px solid yellowgreen;
+            height: 30px;
+        }
+        input#verificar{
+            background: black;
+            border: 1px solid yellowgreen;
+            border-radius: 50%;
+            color: gray;
+            height: 35px;
+        }
+        div#br{
+            display: none;
+            
+        }
+        div#br > img{
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sua Nacionalidade</h1>
+        <p>Qual seu País de Naciomento?</p>
+        <input type="text" name="pais" id="ipais" placeholder="Seu País">
+        <input type="submit" value="Verificar" id="verificar" onclick="verificar()">
+        <div id="res1"></div>
+        <div id="res2"></div>
+        <div id="br"><img src="https://static.todamateria.com.br/upload/ba/nd/bandeiradobrasil-2-cke.jpg" alt=""></div>
+
+    <!--  JavaScript  -->
+
+    <script>
+        function verificar() {
+            var pais = window.document.getElementById('ipais')
+            var pais1 = String(pais.value)
+            var res1 = window.document.getElementById('res1')
+            var res2 = window.document.getElementById('res2') 
+                res1.innerHTML = `<p>você vive em ${pais1}</p>`      
+            if (pais1 == 'Brasil') {
+                res2.innerHTML = 'Você é Brasileiro!'
+                document.querySelector('div#br').style = "display: block;"
+            } else {
+                res2.innerHTML = "Você é estrageiro!"
+                document.querySelector('div#br').style = "display:none;"
+            }
+        }
+    </script>
+</body>
+</html>
